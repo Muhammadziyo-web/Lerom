@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { BrowserRouter } from "react-router-dom";
+
 import reactLogo from './assets/react.svg'
 import Article from './Components/Article'
 import Aside from './Components/Aside'
@@ -10,12 +12,15 @@ function App() {
 
   return (
     <>
-      <Navbar />
-      <div className="containers container3">
-      <Aside />
-      <Article/>
-      </div>
+      <BrowserRouter>
       
+        <Navbar />
+        <div className="containers container3">
+          <Aside />
+          <Article />
+        </div>
+
+      </BrowserRouter>
     </>
   )
 }

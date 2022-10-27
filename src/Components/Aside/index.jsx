@@ -1,25 +1,17 @@
-import React,{useEffect,useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import imgPercent from '../../assets/img/backgroundImg.png'
 
 function Aside() {
 
-    
-let [close,setClose] =useState('')
-useEffect(() => {
-    // 👇️ use document.getElementById()
-    const el = document.querySelector('.menu-wrapper');
-    setClose(el)
-    },[])
+
+
 
     return (
         <>
             <div className="aside-wrapper">
-                <div className="menu-wrapper">
-                <i class="fa-solid fa-xmark" onClick={()=>{
 
-                    close.style.transform='translateX(100vw)'
-                    close.style.boxShadow='none'
-                }}></i>
+
+                <div className="aside-wrp none">
 
                     <aside>
                         <div className="accordion accordion-flush" id="accordionFlushExample">
@@ -134,8 +126,8 @@ useEffect(() => {
                         </div>
                     </aside>
                     <button className="download">Скачать каталог<i class="fa-solid fa-cloud-arrow-down"></i></button>
-
                 </div>
+
                 <div className="percent">
                     <img src={imgPercent} alt='img' />
                     <h1>Рассрочка<span> без %</span></h1>
