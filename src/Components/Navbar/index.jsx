@@ -1,10 +1,20 @@
+import React,{useEffect,useState} from 'react';
 import logo from '../../assets/img/logo.svg'
 
 
 
 
 
+
 function Navbar() {
+let [menu,setMenu] =useState('')
+    useEffect(() => {
+        // 👇️ use document.getElementById()
+        const el = document.querySelector('.menu-wrapper');
+        setMenu(el)
+        console.log(el);},[])
+
+
     return (
         <>
             <div className="containers container1">
@@ -45,7 +55,14 @@ function Navbar() {
 
                 </div>
 
-                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-bars" onClick={
+                    ()=>{
+
+                        menu.style.transform='translateX(0)'
+                        menu.style.boxShadow='0px 0px 10000px black'
+
+                    }
+                }></i>
                 {/* Right Part ended */}
             </div>
 
@@ -54,10 +71,10 @@ function Navbar() {
 
                     <ul>
                         <li><a href="#" id='current'>Каталог<i class="fa-solid fa-caret-down"></i></a></li>
-                        <li><a href="#">О нас</a></li>
-                        <li><a href="#">3D-моделирование</a></li>
-                        <li><a href="#">Покупателю</a></li>
-                        <li><a href="#">Доставка и оплата</a></li>
+                        <li><a href="#" className='nn'>О нас</a></li>
+                        <li><a href="#" className='nn'>3D-моделирование</a></li>
+                        <li><a href="#" className='nn'>Покупателю</a></li>
+                        <li><a href="#" className='nn'>Доставка и оплата</a></li>
                     </ul>
 
                     <div className="search">
