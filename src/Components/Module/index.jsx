@@ -1,16 +1,16 @@
 import Card from "../UI/Card";
 
 function Module() {
-    return ( 
+    return (
         <article>
-                        <Card/>
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                    </article>
-     );
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+        </article>
+    );
 }
 
 export default Module;

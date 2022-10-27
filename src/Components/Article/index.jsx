@@ -1,4 +1,5 @@
-import { Route, Routes, NavLink } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Route, Routes, NavLink, useLocation, Navigate } from "react-router-dom";
 import Card from "../UI/Card";
 import img1 from "../../assets/img/bgNN.svg";
 import img2 from "../../assets/img/bgBl.svg";
@@ -7,8 +8,26 @@ import Module from "../Module";
 import Compozite from "../Compozites";
 
 function Article() {
+
+    const location = useLocation();
+
+    useEffect(() => {
+
+        if (window.location.pathname.length < 2) {
+            console.log(window.location.pathname.length);
+        } else {
+            console.log(' no hhh');
+        }
+    }, [])
+
+
+
     return (
         <>
+            {
+                (window.location.pathname.length < 2) ? <Navigate to="/module" /> : ''
+
+            }
             <div className="article-wrapper">
                 <p className="mobile-none">Главная &gt;&gt; Гостиные &gt;&gt; Коллекции <b>&gt;&gt; Мелисса</b></p>
                 <div className="navigate">
@@ -19,7 +38,7 @@ function Article() {
                             <a>Композиции</a>
                         </div>
                     </NavLink>
-                    <NavLink to={'module'} className='navlink'>
+                    <NavLink to={'/module'} className='navlink'>
 
 
                         <div className="nav2 navs">
@@ -30,10 +49,11 @@ function Article() {
                     </NavLink>
                 </div>
 
+
                 <Routes>
-                    <Route path="/module" element={<Module/>} />
-                    <Route path="/" element={<Module/>}/>
-                        <Route path="/composite" element={<Compozite/>}/>
+                    <Route path="/module" element={<Module />} />
+                    <Route path="/" element={<Module />} />
+                    <Route path="composite" element={<Compozite />} />
                 </Routes>
 
             </div>

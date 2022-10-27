@@ -288,8 +288,14 @@ article {
   width: 19px;
   height: 19px;
   display: block;
-  background: rgb(156, 165, 204);
+  background-image: url(./assets/img/Rectangle\ 37.png);
+  background-position: center;
+  background-size: cover;
   border-radius: 50%;
+}
+.colors-ex span img {
+  width: 100%;
+  height: 100%;
 }
 
 .navigate {
@@ -627,10 +633,22 @@ body {
   }
 }
 .card-btn {
-  display: none;
+  display: block;
   color: #fff;
   background: #004583;
   border: none;
+  padding: 16px 36px;
+  position: absolute;
+  bottom: 10px;
+  transition: all 0.3s ease-in-out;
+}
+.card-btn:hover {
+  color: #004583;
+  background: rgb(150, 141, 194);
+}
+
+.card {
+  padding-bottom: 440px;
 }
 
 .percent {
